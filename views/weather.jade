@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    h1(class="ui header").
+        Weather
+    table(border='0')
+        thead
+            tr
+                th(width="10") #
+                th(width="150", align="left") Location
+                th(width="130", align="left") Details
+                th(width="120", align="left") Update Status
+                th(width="500", align="left") Last Update				
+        tbody
+            each item, i in weather
+                tr
+                    td=i+1
+                    td=item.location
+                    td=item.data
+                    td=item.updateStatus
+                    td=item.lastUpdate
+    br
+    button(class="ui button", type="button", onclick="window.open('updateweather', '_self');") Update Now
